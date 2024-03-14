@@ -6,7 +6,7 @@ class ConfirmDeleteEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double cardWidth = (screenWidth - 1) / 2; // Ajusta el ancho según tus necesidades
+    double cardWidth = (screenWidth - 1) / 2;
     return Stack(
       children: [
         Scaffold(
@@ -49,12 +49,12 @@ class ConfirmDeleteEvent extends StatelessWidget {
                 ),
               ),
               GridView.count(
-                shrinkWrap: true, // Para ajustar el tamaño del GridView al contenido
-                physics: NeverScrollableScrollPhysics(), // Para deshabilitar el desplazamiento del GridView
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 1,
                 crossAxisSpacing: 1,
                 mainAxisSpacing: 1,
-                childAspectRatio: cardWidth / 45, // Ajustar según tus necesidades
+                childAspectRatio: cardWidth / 45,
                 children: [
                   _buildCardLarge("9 A.M.", Color(0xFF495DCE), 4, 'Daily'),
                   _buildCardLarge("10 A.M.", Color(0xFF495DCE), 4, 'Sprint Planning'),
@@ -65,9 +65,9 @@ class ConfirmDeleteEvent extends StatelessWidget {
             ],
           ),
         ),
-        // Elemento que opaca la vista
+        // Fondo Opacado
         Container(
-          color: Colors.black.withOpacity(0.6), // Color negro semi-transparente
+          color: Colors.black.withOpacity(0.6),
           width: double.infinity,
           height: double.infinity,
         ),
@@ -75,7 +75,7 @@ class ConfirmDeleteEvent extends StatelessWidget {
         Center(
           child: Container(
             constraints: BoxConstraints(
-              maxWidth: 300, // Ancho máximo deseado para el modal
+              maxWidth: 300,
             ),
             child: Card(
               child: Padding(
@@ -102,18 +102,18 @@ class ConfirmDeleteEvent extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () => _navigateToHome(context),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)), // Color de fondo azul
+                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)),
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20), // Bordes semicirculares
+                              borderRadius: BorderRadius.circular(20),
                             ),
                           ),
                           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.symmetric(horizontal: 40, vertical: 10), // Ajustar el padding según sea necesario
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                           ),
                         ),
                         child: Text(
-                          'Guardar',
+                          'Aceptar',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -135,7 +135,7 @@ class ConfirmDeleteEvent extends StatelessWidget {
   void _navigateToHome(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MyHomePage(title: "AppAlarm")), // Cambia 'NewScreen()' por el nombre de tu nueva pantalla
+      MaterialPageRoute(builder: (context) => MyHomePage(title: "APP ALARM")),
     );
   }
 
@@ -158,14 +158,14 @@ class ConfirmDeleteEvent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
-                      Icons.edit, // Icono de Material
-                      size: 35, // Tamaño del icono
-                      color: Colors.white, // Color del icono
+                      Icons.edit,
+                      size: 35,
+                      color: Colors.white,
                     ),
                     Icon(
-                      Icons.delete, // Icono de Material
-                      size: 35, // Tamaño del icono
-                      color: Colors.white, // Color del icono
+                      Icons.delete,
+                      size: 35,
+                      color: Colors.white,
                     ),
                   ],
                 ),
@@ -175,8 +175,8 @@ class ConfirmDeleteEvent extends StatelessWidget {
               '$title',
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.white, // Color blanco
-                fontWeight: FontWeight.normal, // Negrita
+                color: Colors.white,
+                fontWeight: FontWeight.normal,
               ),
             ),
           ],

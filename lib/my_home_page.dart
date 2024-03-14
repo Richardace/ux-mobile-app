@@ -12,18 +12,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double cardWidth = (screenWidth - 1) / 2; // Ajusta el ancho según tus necesidades
+    double cardWidth = (screenWidth - 1) / 2;
     return Scaffold(
       appBar: CustomAppBar(
         title: widget.title,
@@ -64,12 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           GridView.count(
-            shrinkWrap: true, // Para ajustar el tamaño del GridView al contenido
-            physics: NeverScrollableScrollPhysics(), // Para deshabilitar el desplazamiento del GridView
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 2,
             crossAxisSpacing: 1,
             mainAxisSpacing: 1,
-            childAspectRatio: cardWidth / 100, // Ajustar según tus necesidades
+            childAspectRatio: cardWidth / 100,
             children: [
               _buildCard("Reuniones", Color(0xFF495DCE), 4, 'assets/Reunion.png', true),
               _buildCard("Entregas", Color(0xFF025EA6), 1, 'assets/Entregas.png', false),
@@ -101,12 +94,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           GridView.count(
-            shrinkWrap: true, // Para ajustar el tamaño del GridView al contenido
-            physics: NeverScrollableScrollPhysics(), // Para deshabilitar el desplazamiento del GridView
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
             crossAxisCount: 1,
             crossAxisSpacing: 1,
             mainAxisSpacing: 1,
-            childAspectRatio: cardWidth / 45, // Ajustar según tus necesidades
+            childAspectRatio: cardWidth / 45,
             children: [
               _buildCardLarge("Daily", Color(0xFF495DCE), 4, '22-02-2024 - Reunión'),
             ],
@@ -119,8 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Image.asset(
           "assets/logoAdd.png",
-          width: 85, // Reducir el ancho del icono
-          height: 85, // Reducir el alto del icono
+          width: 85,
+          height: 85,
         ),
       ),
     );
@@ -129,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToAddEvent(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ViewAddEvent()), // Cambia 'NewScreen()' por el nombre de tu nueva pantalla
+      MaterialPageRoute(builder: (context) => ViewAddEvent()),
     );
   }
 
@@ -158,8 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$title',
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.white, // Color blanco
-                fontWeight: FontWeight.bold, // Negrita
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
@@ -192,8 +185,8 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Image.asset(
                   pathIcon,
-                  width: 35, // Reducir el ancho del icono
-                  height: 35, // Reducir el alto del icono
+                  width: 35,
+                  height: 35,
                 ),
                 Text(
                   '$number',
@@ -201,13 +194,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 8), // Reducir el espacio entre los elementos
+            SizedBox(height: 8),
             Text(
               '$title',
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.white, // Color blanco
-                fontWeight: FontWeight.bold, // Negrita
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],

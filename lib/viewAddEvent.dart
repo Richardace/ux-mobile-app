@@ -8,8 +8,8 @@ class ViewAddEvent extends StatefulWidget {
 }
 
 class _ViewAddEventState extends State<ViewAddEvent> {
-  DateTime? selectedDate; // Variable para almacenar la fecha seleccionada
-  TimeOfDay? selectedTime; // Variable para almacenar la hora seleccionada
+  DateTime? selectedDate;
+  TimeOfDay? selectedTime;
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +52,12 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   filled: true,
                 ),
               ),
-              SizedBox(height: 10), // Agregamos un espacio entre los campos
+              SizedBox(height: 10),
               InkWell(
-                onTap: () => _selectDate(context), // Llama al método para seleccionar la fecha
+                onTap: () => _selectDate(context),
                 child: IgnorePointer(
                   child: TextFormField(
                     controller: TextEditingController(
-                      // Mostrar la fecha seleccionada en el campo
                       text: selectedDate != null ? "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}" : '',
                     ),
                     decoration: InputDecoration(
@@ -70,13 +69,12 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   ),
                 ),
               ),
-              SizedBox(height: 10), // Agregamos un espacio entre los campos
+              SizedBox(height: 10),
               InkWell(
-                onTap: () => _selectTime(context), // Llama al método para seleccionar la hora
+                onTap: () => _selectTime(context),
                 child: IgnorePointer(
                   child: TextFormField(
                     controller: TextEditingController(
-                      // Mostrar la hora seleccionada en el campo
                       text: selectedTime != null ? "${selectedTime!.hour}:${selectedTime!.minute}" : '',
                     ),
                     decoration: InputDecoration(
@@ -88,7 +86,7 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   ),
                 ),
               ),
-              SizedBox(height: 10), // Agregamos un espacio entre los campos
+              SizedBox(height: 10),
               DropdownButtonFormField(
                 decoration: InputDecoration(
                   labelText: 'Tipo',
@@ -103,10 +101,9 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   );
                 }).toList(),
                 onChanged: (value) {
-                  // Acción al cambiar el valor del campo select
                 },
               ),
-              SizedBox(height: 10), // Agregamos un espacio entre los campos
+              SizedBox(height: 10),
               DropdownButtonFormField(
                 decoration: InputDecoration(
                   labelText: 'Repetir',
@@ -121,10 +118,9 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   );
                 }).toList(),
                 onChanged: (value) {
-                  // Acción al cambiar el valor del campo select
                 },
               ),
-              SizedBox(height: 10),// Agregamos espacio antes del botón
+              SizedBox(height: 10),
               DropdownButtonFormField(
                 decoration: InputDecoration(
                   labelText: 'Sonido',
@@ -139,22 +135,21 @@ class _ViewAddEventState extends State<ViewAddEvent> {
                   );
                 }).toList(),
                 onChanged: (value) {
-                  // Acción al cambiar el valor del campo select
                 },
               ),
-              SizedBox(height: 10),// Agregamos espacio antes del botón
+              SizedBox(height: 10),
               Center(
                 child: ElevatedButton(
                   onPressed: () => _navigateToConfirmEvent(context),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)), // Color de fondo azul
+                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20), // Bordes semicirculares
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.symmetric(horizontal: 40, vertical: 10), // Ajustar el padding según sea necesario
+                      EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                     ),
                   ),
                   child: Text('Guardar',
@@ -202,7 +197,7 @@ class _ViewAddEventState extends State<ViewAddEvent> {
   void _navigateToConfirmEvent(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MyHomePageWithMessageConfirmation(title: "AppAlarm")), // Cambia 'NewScreen()' por el nombre de tu nueva pantalla
+      MaterialPageRoute(builder: (context) => MyHomePageWithMessageConfirmation(title: "AppAlarm")),
     );
   }
 }

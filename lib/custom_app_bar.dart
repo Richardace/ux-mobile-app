@@ -15,15 +15,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Row(
         children: [
-          logo, // Logotipo a la izquierda
-          const SizedBox(width: 0), // Espacio entre el logotipo y el texto
+          logo,
+          const SizedBox(width: 0),
           Expanded(
             child: Text(
               title,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.white, // Color blanco
-                fontWeight: FontWeight.bold, // Negrita
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -31,7 +31,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       backgroundColor: Color(0xFF3CA9FF),
       actions: [
-        // Aquí puedes agregar acciones adicionales si es necesario
       ],
     );
   }

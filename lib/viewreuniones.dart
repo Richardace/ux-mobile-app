@@ -24,7 +24,7 @@ class ViewReuniones extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Agregar nuevo evento:',
+                  'Reuniones para hoy:',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -83,9 +83,9 @@ class ViewReuniones extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(
-                        Icons.edit, // Icono de Material
-                        size: 35, // Tamaño del icono
-                        color: Colors.white, // Color del icono
+                        Icons.edit,
+                        size: 35,
+                        color: Colors.white,
                       ),
                       GestureDetector(
                         onTap: () {
@@ -108,8 +108,8 @@ class ViewReuniones extends StatelessWidget {
                 '$title',
                 style: TextStyle(
                   fontSize: 15,
-                  color: Colors.white, // Color blanco
-                  fontWeight: FontWeight.normal, // Negrita
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
             ],

@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double cardWidth = (screenWidth - 1) / 2; // Ajusta el ancho según tus necesidades
+    double cardWidth = (screenWidth - 1) / 2;
     return Scaffold(
       appBar: CustomAppBar(
         title: widget.title,
@@ -66,12 +66,12 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
                 ),
               ),
               GridView.count(
-                shrinkWrap: true, // Para ajustar el tamaño del GridView al contenido
-                physics: NeverScrollableScrollPhysics(), // Para deshabilitar el desplazamiento del GridView
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 crossAxisSpacing: 1,
                 mainAxisSpacing: 1,
-                childAspectRatio: cardWidth / 100, // Ajustar según tus necesidades
+                childAspectRatio: cardWidth / 100,
                 children: [
                   _buildCard("Reuniones", Color(0xFF495DCE), 4, 'assets/Reunion.png', true),
                   _buildCard("Entregas", Color(0xFF025EA6), 1, 'assets/Entregas.png', false),
@@ -104,12 +104,12 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
                 ),
               ),
               GridView.count(
-                shrinkWrap: true, // Para ajustar el tamaño del GridView al contenido
-                physics: NeverScrollableScrollPhysics(), // Para deshabilitar el desplazamiento del GridView
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 1,
                 crossAxisSpacing: 1,
                 mainAxisSpacing: 1,
-                childAspectRatio: cardWidth / 45, // Ajustar según tus necesidades
+                childAspectRatio: cardWidth / 45,
                 children: [
                   _buildCardLarge("Daily", Color(0xFF495DCE), 4, '22-02-2024 - Reunión'),
                 ],
@@ -120,17 +120,16 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
           Positioned.fill(
             child: GestureDetector(
               onTap: () {
-                // Acción al presionar fuera del modal
               },
               child: Container(
-                color: Colors.black.withOpacity(0.5), // Color negro semi-transparente
+                color: Colors.black.withOpacity(0.5),
               ),
             ),
           ),
           Center(
             child: Container(
               constraints: BoxConstraints(
-                maxWidth: 300, // Ancho máximo deseado para el modal
+                maxWidth: 300,
               ),
               child: Card(
                 child: Padding(
@@ -157,18 +156,18 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
                         child: ElevatedButton(
                           onPressed: () => _navigateToHome(context),
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)), // Color de fondo azul
+                            backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF2196F3)),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20), // Bordes semicirculares
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
                             padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                              EdgeInsets.symmetric(horizontal: 40, vertical: 10), // Ajustar el padding según sea necesario
+                              EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                             ),
                           ),
                           child: Text(
-                            'Guardar',
+                            'Aceptar',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -191,8 +190,8 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
         tooltip: 'Increment',
         child: Image.asset(
           "assets/logoAdd.png",
-          width: 85, // Reducir el ancho del icono
-          height: 85, // Reducir el alto del icono
+          width: 85,
+          height: 85,
         ),
       ),
     );
@@ -201,7 +200,7 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
   void _navigateToHome(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MyHomePage(title: "AppAlarm")), // Cambia 'NewScreen()' por el nombre de tu nueva pantalla
+      MaterialPageRoute(builder: (context) => MyHomePage(title: "APP ALARM")),
     );
   }
 
@@ -230,8 +229,8 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
               '$title',
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.white, // Color blanco
-                fontWeight: FontWeight.bold, // Negrita
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
@@ -262,8 +261,8 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
                 children: [
                   Image.asset(
                     pathIcon,
-                    width: 35, // Reducir el ancho del icono
-                    height: 35, // Reducir el alto del icono
+                    width: 35,
+                    height: 35,
                   ),
                   Text(
                     '$number',
@@ -271,13 +270,13 @@ class _MyHomePageState extends State<MyHomePageWithMessageConfirmation> {
                   ),
                 ],
               ),
-              SizedBox(height: 8), // Reducir el espacio entre los elementos
+              SizedBox(height: 8),
               Text(
                 '$title',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.white, // Color blanco
-                  fontWeight: FontWeight.bold, // Negrita
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
